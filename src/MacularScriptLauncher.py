@@ -4,13 +4,16 @@ import src.TextFormatting as tf
 import json
 import subprocess
 import os
+import re
 
 
 class MacularScriptLauncher:
     def __init__(self, path_config_file):
         # TODO Voir si je peux mettre certaine méthodes privées avec un underscores
         # TODO Ajouter la création du path_macudata s'il n'existe pas. "check_and_create_path"
+        # TODO Rendre les tests de code embarqués dans le dossier en créant les fichiers nécessaires
         self.dict_config = self.read_config_file(path_config_file)
+        self._reg_ext_file = re.compile(".*/(.*?"+re.escape(".")+".*?$)")
 
     @property
     def n_sim(self):
@@ -37,20 +40,27 @@ class MacularScriptLauncher:
         return self._params_dict
 
     @property
+    def dict_formatting_alias(self):
+        return self._dict_formatting_alias
+
+    @property
     def dict_config(self):
         return self._dict_config
 
     @dict_config.setter
     def dict_config(self, dictionary):
-        self.check_config_dict(dictionary)
-        self._dict_config = dictionary
-        self._n_sim = self.dict_config["n_sim"]
+        #TODO utiliser dictionnaire ou plutôt directement un path de fichier init.
+        self.check_mandatory_params(dictionary)
+        self._n_sim = dictionary["n_sim"]
         self._path_macufile = ""
         self._path_macudata = ""
         self._path_macustim = ""
         self._path_macugraph = ""
         self._params_dict = {}
         self._dict_formatting_alias = {}
+        self.check_config_dict(dictionary)
+        self._dict_config = dictionary
+
 
     @staticmethod
     def read_config_file(path_config_file):
@@ -59,23 +69,22 @@ class MacularScriptLauncher:
 
     def check_list_length(self, list_params):
         if type(list_params) == list:
-            if len(list_params) != self.n_sim or len(list_params) == 1:
+            if len(list_params) != self.n_sim and len(list_params) != 1:
                 raise IndexError(f"List {list_params} is too long.\nSize must be of the length {self.n_sim} or 1.")
 
     def check_config_dict(self, dictionary):
         # Check if dict config have the correct structure.
         self.check_dict_type(dictionary)
-        self.check_mandatory_params(dictionary)
-        self.check_path(dictionary["path_macufile"])
-        self.check_path(dictionary["path_macudata"])
+        self.check_path_type(dictionary["path_macufile"])
+        self.check_path_type(dictionary["path_macudata"])
 
         try:
-            self.check_path(dictionary["path_macustim"])
+            self.check_path_type(dictionary["path_macustim"])
         except KeyError:
             pass
 
         try:
-            self.check_path(dictionary["path_macugraph"])
+            self.check_path_type(dictionary["path_macugraph"])
         except KeyError:
             pass
 
@@ -99,15 +108,27 @@ class MacularScriptLauncher:
         if not os.path.isfile(path):
             raise FileNotFoundError(f"This path doesn't exist : {path}")
 
-    def check_path(self, paths):
-        self.check_list_length(paths)
-        if type(paths) == str:
-            self.check_path_existing(paths)
-        elif type(paths) == list:
-            for path in paths:
-                self.check_path_existing(path)
-        else:
+    def path_file_to_path_dir(self, path):
+        # File "file.ext"
+        try:
+            file = self._reg_ext_file.findall(path)[0]
+            path = path.replace(file, "")
+        except IndexError:
+            pass
+
+        return path
+
+    def create_non_existing_path(self, path):
+        try:
+            os.makedirs(self.path_file_to_path_dir(path))
+        except FileExistsError:
+            print("File exist already.")
+            pass
+
+    def check_path_type(self, paths):
+        if type(paths) != str and type(paths) != list:
             raise TypeError("Path have to be list or str.")
+        self.check_list_length(paths)
 
     @staticmethod
     def check_dict_type(dictionary):
@@ -117,11 +138,11 @@ class MacularScriptLauncher:
     @staticmethod
     def check_mandatory_params(dictionary):
         try:
-            type(dictionary["n_stim"])
+            type(dictionary["n_sim"])
             type(dictionary["path_macufile"])
             type(dictionary["path_macudata"])
         except KeyError:
-            raise KeyError("Config dictionary must contains n_stim, path_macufile and path_macudata parameters.")
+            raise KeyError("Config dictionary must contains n_sim, path_macufile and path_macudata parameters.")
 
     def check_params_dict(self, params_dict):
         for param in params_dict:
@@ -144,7 +165,8 @@ class MacularScriptLauncher:
 
     def refresh_dict_formatting_alias(self, i_sim):
         for alias in self.dict_config:
-            if alias not in ("path_macufile", "path_macudata", "path_macustim", "path_macugraph", "params_dict"):
+            if alias not in ("path_macufile", "path_macudata", "path_macustim", "path_macugraph", "params_dict",
+                             "n_sim"):
                 self._dict_formatting_alias[alias] = self.next_element(self.dict_config[alias], i_sim)
 
         try:
@@ -160,16 +182,20 @@ class MacularScriptLauncher:
                                                 self._dict_formatting_alias).to_str()
         self._path_macudata = tf.TextFormatting(self.next_element(self.dict_config["path_macudata"], i_sim),
                                                 self._dict_formatting_alias).to_str()
+        self.check_path_existing(self._path_macufile)
+        self.create_non_existing_path(self._path_macudata)
 
         try:
             self._path_macustim = tf.TextFormatting(self.next_element(self.dict_config["path_macustim"], i_sim),
                                                     self._dict_formatting_alias).to_str()
+            self.check_path_existing(self._path_macustim)
         except KeyError:
             pass
 
         try:
             self._path_macugraph = tf.TextFormatting(self.next_element(self.dict_config["path_macugraph"], i_sim),
                                                      self._dict_formatting_alias).to_str()
+            self.check_path_existing(self._path_macugraph)
         except KeyError:
             pass
 
@@ -206,5 +232,8 @@ class MacularScriptLauncher:
 
         for param in self.params_dict:
             list_subprocess += ["-p", f"{param}={self.params_dict[param]}"]
+
+        print(list_subprocess)
+
 
         return list_subprocess
