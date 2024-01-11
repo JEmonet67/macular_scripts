@@ -1,8 +1,11 @@
 {
     "n_sim": 10,
-    "path_macufile": "/user/jemonet/home/Documents/These/Macular files/Session retinocortical/RefactoredMacular/diSymGraph_pConnecParams/9x3,15\u00b0_N41x15_nue0_1,86_nui0_12,66_horizWhiteBarMotion0,67x0,9\u00b0_6dps_deltat0,0167_ampOPL0,025.json",
-    "path_macudata": "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9\u00b0_6dps/ampGang/test_new_script/RC_RM_dSGpCP{id_sim}_{name_caract_sim}{value_caract_sim}{unit_caract_sim}_0f.csv",
-    "path_macustim": "/user/jemonet/home/Documents/These/stimuli/stim_database_newName/horizontal_motion/black_background_white_bar/horizontalScreen/2700x945/bar201x270/D187_motion30_trajX-191to2689_Y338to338_0f.mp4",
+    "path_dir_macufile": "/user/jemonet/home/Documents/These/Macular files/Session retinocortical/RefactoredMacular/diSymGraph_pConnecParams",
+    "path_dir_macudata": "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps",
+    "path_dir_macustim": "/user/jemonet/home/Documents/These/stimuli/stim_database_newName/horizontal_motion/black_background_white_bar/horizontalScreen/2700x945/bar201x270",
+    "path_macufile": "{path_dir_macufile}/9x3,15\u00b0_N41x15_nue0_1,86_nui0_12,66_horizWhiteBarMotion0,67x0,9\u00b0_6dps_deltat0,0167_ampOPL0,025.json",
+    "path_macudata": "{path_dir_macudata}/{name_caract_sim}/RC_RM_dSGpCP{id_sim}_{name_caract_sim}{value_caract_sim}{unit_caract_sim}_0f.csv",
+    "path_macustim": "{path_dir_macustim}/D187_motion30_trajX-191to2689_Y338to338_0f.mp4",
     "params_dict": {
         "virtual_retina/relative_ampOPL": [
             0.00083,
