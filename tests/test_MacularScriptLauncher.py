@@ -4,6 +4,9 @@ import os
 # TODO : Test de comparaison de csv obtenu par le script comparé à un csv test conservé
 # TODO : Test sans path stim, sans path graph ou sans param=value
 # TODO : Faire les tests des erreurs levées dans la classe MacularScriptLauncher
+# TODO : Test simulation rétine : 1 seul str sans rien et n_stim=3, 1 sim avec graph/stim/params pas liste,
+#  1 avec liste de longueur 1, 3 simulations avec graph, stim et param sous forme de liste.
+# TODO : Que se passe t'il si n_sim = 0?
 
 def test_init_macular_script_launcher():
     path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
@@ -88,7 +91,7 @@ def test_refresh_dict_formatting_alias():
         'unit_caract_sim': 'Hz',
         'value_caract_sim': 1,
         'virtual_retina/relative_ampOPL_name': 'virtual_retina/relative_ampOPL',
-        'virtual_retina/relative_ampOPL_value': 0.00083
+        'virtual_retina/relative_ampOPL_value': "0,00083"
     }
     dict_formatting_alias7 = {
         'id_sim': '0012',
@@ -96,7 +99,7 @@ def test_refresh_dict_formatting_alias():
         'unit_caract_sim': 'Hz',
         'value_caract_sim': 40,
         'virtual_retina/relative_ampOPL_name': 'virtual_retina/relative_ampOPL',
-        'virtual_retina/relative_ampOPL_value': 0.0333
+        'virtual_retina/relative_ampOPL_value': "0,0333"
     }
 
     macuscript_launcher.refresh_dict_formatting_alias(0)
@@ -177,7 +180,7 @@ def test_load_next_sim():
         'unit_caract_sim': 'Hz',
         'value_caract_sim': 1,
         'virtual_retina/relative_ampOPL_name': 'virtual_retina/relative_ampOPL',
-        'virtual_retina/relative_ampOPL_value': 0.00083
+        'virtual_retina/relative_ampOPL_value': "0,00083"
     }
 
     macuscript_launcher.load_next_sim(0)

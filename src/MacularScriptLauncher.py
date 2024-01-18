@@ -9,6 +9,9 @@ import re
 
 class MacularScriptLauncher:
     def __init__(self, path_config_file):
+        # TODO : Create a executable
+        # TODO : Réfléchir et ajouter des tests de run avec différents fichiers init pour tester / montrer les possibilités du launcher
+        # TODO : test avec une seule simulation ou avec n fois la même
         # TODO Voir si je peux mettre certaine méthodes privées avec un underscores
         # TODO Ajouter la création du path_macudata s'il n'existe pas. "check_and_create_path"
         # TODO Rendre les tests de code embarqués dans le dossier en créant les fichiers nécessaires
@@ -122,7 +125,6 @@ class MacularScriptLauncher:
         try:
             os.makedirs(self.path_file_to_path_dir(path))
         except FileExistsError:
-            print("File exist already.")
             pass
 
     def check_path_type(self, paths):
@@ -172,8 +174,8 @@ class MacularScriptLauncher:
         try:
             for alias in self.dict_config["params_dict"]:
                 self._dict_formatting_alias[f"{alias}_name"] = alias
-                self._dict_formatting_alias[f"{alias}_value"] = self.next_element(
-                    self.dict_config["params_dict"][alias], i_sim)
+                self._dict_formatting_alias[f"{alias}_value"] = str(self.next_element(
+                    self.dict_config["params_dict"][alias], i_sim)).replace(".", ",")
         except KeyError:
             pass
 
