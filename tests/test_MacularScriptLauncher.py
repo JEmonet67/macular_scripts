@@ -40,6 +40,33 @@ def test_init_macular_script_launcher():
     assert macuscript_launcher.dict_formatting_alias == {}
     assert macuscript_launcher.dict_config == dict_config_test
 
+def test_check_params_dict():
+    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
+
+    dict_config_test = {'n_sim': 8, 'path_macufile': '/user/jemonet/home/Documents/These/Macular files/Session '
+                                                     'retinocortical/RefactoredMacular/diSymGraph_pConnecParams/'
+                                                     '9x3,15°_N41x15_nue0_1,86_nui0_12,66_horizWhiteBarMotion0,67x0,9°'
+                                                     '_6dps_deltat0,0167_ampOPL0,025.json',
+                        'path_macudata': '/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/'
+                                         'diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/'
+                                         'ampGang/RC_RM_dSGpCP{id_sim}_'
+                                         '{name_caract_sim}{value_caract_sim}{unit_caract_sim}_0f.csv',
+                        'path_macustim': '/user/jemonet/home/Documents/These/stimuli/stim_'
+                                         'database_newName/horizontal_motion/black_background_white_bar/'
+                                         'horizontalScreen/2700x945/bar201x270/'
+                                         'D187_motion30_trajX-191to2689_Y338to338_0f.mp4',
+                        'params_dict': {'virtual_retina/relative_ampOPL': [0.00083, 0.004, 0.0079, 0.0119, 0.0159,
+                                                                           0.0198, 0.0292, 0.0333],
+                                        "BipolarGainControl/h_B": 6.11},
+                        'id_sim': ['0012'],
+                        'name_caract_sim': 'ampGang',
+                        'unit_caract_sim': 'Hz',
+                        'value_caract_sim': [1, 5, 10, 15, 20, 25, 35, 40]}
+
+    macuscript_launcher.dict_config = dict_config_test
+    assert macuscript_launcher.dict_config["params_dict"]['BipolarGainControl/h_B'] == 6.11
+
 
 def test_change_dict_config():
     path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"

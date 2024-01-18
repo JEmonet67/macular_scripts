@@ -150,8 +150,8 @@ class MacularScriptLauncher:
         for param in params_dict:
             if type(param) != str:
                 raise TypeError(f"Macular parameters must be str not {type(param)}.")
-            if type(params_dict[param]) not in (int, list):
-                raise TypeError(f"Macular parameter value must be int or list not "
+            if type(params_dict[param]) not in (int, float, list):
+                raise TypeError(f"Macular parameter value must be int, float or list not "
                                 f"{type(params_dict[param])}")
             self.check_list_length(params_dict[param])
 
