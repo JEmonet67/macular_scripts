@@ -9,7 +9,7 @@ import os
 # TODO : Que se passe t'il si n_sim = 0?
 
 def test_init_macular_script_launcher():
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
     dict_config_test = {'n_sim': 10, 'path_macufile': '/user/jemonet/home/Documents/These/Macular files/Session '
@@ -41,7 +41,7 @@ def test_init_macular_script_launcher():
     assert macuscript_launcher.dict_config == dict_config_test
 
 def test_check_params_dict():
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
     dict_config_test = {'n_sim': 8, 'path_macufile': '/user/jemonet/home/Documents/These/Macular files/Session '
@@ -69,7 +69,7 @@ def test_check_params_dict():
 
 
 def test_change_dict_config():
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
     dict_config_test = {'n_sim': 8, 'path_macufile': '/user/jemonet/home/Documents/These/Macular files/Session '
@@ -99,7 +99,7 @@ def test_change_dict_config():
 
 
 def test_next_element():
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
     for i in range(8):
@@ -110,7 +110,7 @@ def test_next_element():
 
 
 def test_refresh_dict_formatting_alias():
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
     dict_formatting_alias0 = {
         'id_sim': '0012',
@@ -138,7 +138,7 @@ def test_refresh_dict_formatting_alias():
 
 def test_refresh_paths():
     # TODO test avec une liste de macugraph pour diversifier un peu plus le test, en faire un autre pour tester l'absence de stim/graph
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
     macuscript_launcher.refresh_dict_formatting_alias(0)
@@ -160,7 +160,7 @@ def test_refresh_paths():
 
 def test_create_non_existing_path():
     # TODO
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
     path_macudata_file = "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/" \
                     "diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/" \
@@ -175,7 +175,7 @@ def test_create_non_existing_path():
 
 
 def test_path_file_to_path_dir():
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
     path_macudata_file = "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/" \
                     "diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/" \
@@ -188,7 +188,7 @@ def test_path_file_to_path_dir():
     assert macuscript_launcher.path_file_to_path_dir(path_macudata_file) == path_macudata_dir
 
 def test_refresh_params_dict():
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
     macuscript_launcher.refresh_params_dict(0)
@@ -199,7 +199,7 @@ def test_refresh_params_dict():
 
 
 def test_load_next_sim():
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
     dict_formatting_alias0 = {
         'id_sim': '0012',
@@ -233,7 +233,7 @@ def test_load_next_sim():
 
 
 def test_make_subprocess():
-    path_init_file = "/user/jemonet/home/Documents/These/Code/macular_scripts/config_macuscript_default.json"
+    path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
     macuscript_launcher.load_next_sim(0)

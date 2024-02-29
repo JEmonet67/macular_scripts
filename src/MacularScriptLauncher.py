@@ -9,7 +9,7 @@ import re
 
 class MacularScriptLauncher:
     def __init__(self, path_config_file):
-        # TODO : Create a executable
+        #TODO : Add comments.
         # TODO : Réfléchir et ajouter des tests de run avec différents fichiers init pour tester / montrer les possibilités du launcher
         # TODO : test avec une seule simulation ou avec n fois la même
         # TODO Voir si je peux mettre certaine méthodes privées avec un underscores
