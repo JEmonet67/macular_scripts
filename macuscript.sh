@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python ./macuscript.py "$1"
+python ~/Documents/These/Code/macular_scripts/macuscript.py "$1"
