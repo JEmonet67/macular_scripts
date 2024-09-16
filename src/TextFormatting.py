@@ -7,16 +7,40 @@ class TextFormatting:
     Each substring "{alias_format}" have different alias name and all are present as keys in a formatting dictionary.
     They are associated to a value corresponding to a str used to replace it and formate the string.
 
-    Parameters
+    Attributes
     ----------
     str_to_form : str
-        String chain with "{alias_format}" to formate.
+        String chain with "{alias_format}" to format.
 
     formatting_dict : dict
         Dictionary that associate "alias_format" keys to string to add in the string to form.
 
+    formatting_reg : re.Pattern
+        Compiled regular expression pattern to extract substring between braces : {substring}.
+
+    Example
+    ----------
+    str_to_form = "RC_RM_dSGpCP{id}_{caract}{value_caract}{unit_caract}_0f
+    formatting_dict = {"id":"0026", "caract":"barSpeed", "value_caract":6, "unit_caract":"dps"}
+
+    TextFormatting.to_str() = "RC_RM_dSGpCP0026_barSpeed6dps_0f"
     """
+
     def __init__(self, str_to_form, formatting_dict={}):
+        """Init function to make a TextFormatting object.
+
+        This function initializes the three attributes. The formatting dictionary (formatting_dict) containing
+        alias (key) associate to replacement string, the string to format (str_to_form) and the regular expression
+        to capture substring between braces ({substring}).
+
+        Parameters
+        ----------
+        str_to_form : str
+            String chain with "{alias_format}" to format.
+
+        formatting_dict : dict
+            Dictionary that associate "alias_format" keys to string to add in the string to form.
+        """
         self.formatting_dict = formatting_dict
         self.str_to_form = str_to_form
         self.formatting_reg = re.compile("("+re.escape("{")+".*?"+re.escape("}")+")")
@@ -47,7 +71,7 @@ class TextFormatting:
         self._formatting_dict = dictionary
 
     def to_str(self):
-        """Formate the string_to_form attribute based on the formatting dictionary.
+        """Format the string_to_form attribute based on the formatting dictionary.
 
         Each "{alias_format}" present in the str are replace by the value of the alias_format key in the formatting
         dictionary. If no corresponding key is in the dictionary, the "{alias_format}" is kept and a warning launch.
@@ -70,4 +94,5 @@ class TextFormatting:
         return formatted_str
 
     def __repr__(self):
+        """Function to display a TextFormatting object by returning its to_str() method."""
         return self.to_str()
