@@ -1,5 +1,3 @@
-import subprocess
-
 import src.TextFormatting as tf
 import json
 import subprocess
@@ -156,11 +154,11 @@ class MacularScriptLauncher:
     def dict_config(self, dict_config):
         """Setter for the dict_config attribute.
 
-        A chaque fois qu'un nouveau dictionnaire de configuration du batch de simulation est ajouté, l'ensemble des
-        autres attributs sont mis à jour. Tous les paramètres de chemin (path_macufile, path_macudata, path_macustim,
-        path_macugraph) sont mis réinitialisé avec une chaîne vide afin d'être modifié plus tard lors de la réalisation
-        des simulations. Même raison pour params_dict et dict_formatting_alias réinitialisés à des dictionnaires vide.
-        Le dictionnaire donné en entrée doit obligatoirement contenir path_macufile, path_macudata et n_sim.
+        Each time a new simulation batch configuration dictionary is added, all other attributes are updated. All path
+        parameters (path_macufile, path_macudata, path_macustim, path_macugraph) are reset to an empty string so that
+        they can be modified later during the simulations simulations. The same applies to params_dict and
+        dict_formatting_alias, which are reset to empty dictionaries.
+        The dictionary provided as input must contain path_macufile, path_macudata and n_sim.
 
         Parameters
         ----------
