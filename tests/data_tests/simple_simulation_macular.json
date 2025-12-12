@@ -1,0 +1,504 @@
+{
+    "0 - BipolarGainControl/V_L": {
+        "decimals": 9,
+        "doc": "Leak Nernst potential",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(mV)",
+        "value": 0
+    },
+    "0 - BipolarGainControl/h_B": {
+        "decimals": 9,
+        "doc": "Activity rate",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(mV/s)",
+        "value": 6.11
+    },
+    "0 - BipolarGainControl/tauA_B": {
+        "decimals": 9,
+        "doc": "Bipolar activation characteristic time",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(s)",
+        "value": 0.1
+    },
+    "0 - BipolarGainControl/tau_B": {
+        "decimals": 9,
+        "doc": "Integration time of the bipolar cells",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(s)",
+        "value": 0.1
+    },
+    "0 - BipolarGainControl/tau_ext": {
+        "decimals": 9,
+        "doc": "Integration time of the external voltage",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(s)",
+        "value": 0.2
+    },
+    "0 - BipolarGainControl/theta_B": {
+        "decimals": 9,
+        "doc": "Non linear rectification threshold",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(mV)",
+        "value": 0
+    },
+    "0.27 - GanglionGainControl/N_G_max": {
+        "decimals": 9,
+        "doc": "Limit of the nonlinear rectification",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(Hz)",
+        "value": 212
+    },
+    "0.27 - GanglionGainControl/V_L": {
+        "decimals": 9,
+        "doc": "Leak Nernst potential",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(mV)",
+        "value": 0
+    },
+    "0.27 - GanglionGainControl/alpha_G": {
+        "decimals": 9,
+        "doc": "Alhpa for nonlinear rectification",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(Hz/mV)",
+        "value": 1110
+    },
+    "0.27 - GanglionGainControl/h_G": {
+        "decimals": 9,
+        "doc": "Activity Rate",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(mV/s)",
+        "value": 0.359
+    },
+    "0.27 - GanglionGainControl/tauA_G": {
+        "decimals": 9,
+        "doc": "Ganglion activation characteristic time",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(s)",
+        "value": 0.189
+    },
+    "0.27 - GanglionGainControl/tau_G": {
+        "decimals": 9,
+        "doc": "Integration time of the ganglion cells dynamics (1/w)",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(s)",
+        "value": 0.1
+    },
+    "0.27 - GanglionGainControl/theta_G": {
+        "decimals": 9,
+        "doc": "Non linear rectification threshold",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(mV)",
+        "value": 0
+    },
+    "BipolarGainControlToGanglion/theta_p": {
+        "decimals": 9,
+        "doc": "Linear rectification threshold",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(mV)",
+        "value": 0
+    },
+    "BipolarGainControlToGanglion/wb_g": {
+        "decimals": 9,
+        "doc": "Synaptic weight bipolar to ganglion",
+        "label": "",
+        "max": 1.7976931348623157e+308,
+        "min": -1.7976931348623157e+308,
+        "type": "dtk::d_real",
+        "unit": "(Hz)",
+        "value": 0.15
+    },
+    "dt": {
+        "decimals": 6,
+        "doc": "Controls the integration step of the ODE solver.",
+        "label": "dt (Integration timestep, in s)",
+        "max": 1.7976931348623157e+308,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.005
+    },
+    "eps_abs": {
+        "decimals": 9,
+        "doc": "Absolute Error.",
+        "label": "Absolute Error",
+        "max": 1.7976931348623157e+308,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 3e-04
+    },
+    "eps_rel": {
+        "decimals": 9,
+        "doc": "Relative Error.",
+        "label": "Relative Error",
+        "max": 1.7976931348623157e+308,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 2e-04
+    },
+    "frame_time": {
+        "decimals": 9,
+        "doc": "Time in s between two frames. If value = 0, will use the value from the video file.",
+        "label": "δt (Time between two successives frames, in s)",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "framerate": {
+        "decimals": 0,
+        "doc": "Controls how fast the visualization should be updated (3D, Layered and stimulus views). Useful if the simulation runs too fast.",
+        "label": "Display Frame Rate (fps)",
+        "max": 60,
+        "min": 1,
+        "type": "dtk::d_int",
+        "unit": "",
+        "value": 10
+    },
+    "graph_file": "/user/jemonet/home/Documents/Hachkaton SOLID/macular/tst/resources/hackathon/simple_graph_test.mac",
+    "layout_file": "/user/jemonet/home/Documents/Hachkaton SOLID/macular/tst/resources/hackathon/simple_simulation_macular_layout.dtk",
+    "ode_integrator": {
+        "doc": "Select Integrator scheme for ODE resolution.",
+        "index": 3,
+        "label": "ODE Integrator",
+        "type": "dtk::d_inliststring",
+        "unit": "",
+        "values": [
+            "RK2",
+            "RK4",
+            "RKF45",
+            "RK8",
+            "RKCK",
+            "RK1imp",
+            "RK2imp",
+            "RK4imp",
+            "BSIMP",
+            "ADAMS",
+            "BDF"
+        ]
+    },
+    "save_frequency": {
+        "decimals": 0,
+        "doc": "save frequency as a multiple of dt (0 = no save)",
+        "label": "Save frequency",
+        "max": 10000,
+        "min": 0,
+        "type": "dtk::d_int",
+        "unit": "",
+        "value": 1
+    },
+    "selected_cells_states": [
+        {
+            "cell_type": "BipolarGainControl",
+            "ids": [
+                307
+            ],
+            "selected_components": [
+                "BipolarResponse"
+            ],
+            "states": {
+            }
+        },
+        {
+            "cell_type": "GanglionGainControl",
+            "ids": [
+                922
+            ],
+            "selected_components": [
+                "FiringRate"
+            ],
+            "states": {
+            }
+        }
+    ],
+    "states_file": "/user/jemonet/home/Documents/Hachkaton SOLID/macular/tst/resources/hackathon/simple_simulation_macular_states.txt",
+    "stimulus_file": "/user/jemonet/home/Documents/Hachkaton SOLID/macular/tst/resources/hackathon/video_whitebar_D187_motion30.mp4",
+    "stop_at_video_end": {
+        "decimals": 0,
+        "doc": "Stop the simulation when the video is finished.",
+        "label": "Stop at end",
+        "max": true,
+        "min": false,
+        "type": "dtk::d_bool",
+        "unit": "",
+        "value": true
+    },
+    "version": "1.5.5",
+    "virtual_retina/FGC_ampFeedback": {
+        "decimals": 6,
+        "doc": "adaptation feedback amplification (Hz)",
+        "label": "Fast Contrast ampFeedback",
+        "max": 1000,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 100
+    },
+    "virtual_retina/FGC_ampInputCurrent": {
+        "decimals": 6,
+        "doc": "converts the dimensionless output of the OPL stage to a current Iopl (Hz)",
+        "label": "Fast Contrast ampInputCurrent",
+        "max": 1000,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 100
+    },
+    "virtual_retina/FGC_gLeak": {
+        "decimals": 6,
+        "doc": "inert leaks in membrane integration (Hz)",
+        "label": "Fast Contrast gLeak",
+        "max": 100,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 5
+    },
+    "virtual_retina/FGC_sigmaSurround": {
+        "decimals": 6,
+        "doc": "adaptation kernel's standard deviation (deg)",
+        "label": "Fast Contrast sigma",
+        "max": 10,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "virtual_retina/FGC_tauSurround": {
+        "decimals": 6,
+        "doc": "adaptation's time constant (s)",
+        "label": "Fast Contrast tau",
+        "max": 10,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.01
+    },
+    "virtual_retina/FGC_wAdaptation": {
+        "decimals": 6,
+        "doc": "controls if there is a variable leakage term in the Iopl",
+        "label": "Fast Contrast wAdaptation",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "virtual_retina/init_value": {
+        "decimals": 6,
+        "doc": "luminance of the uniform screen 'watched' by the retina prior to simulation",
+        "label": "init value",
+        "max": 255,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "virtual_retina/input_luminosity_range": {
+        "decimals": 6,
+        "doc": "intensity in the input sequences fed to the retina",
+        "label": "input luminosity range",
+        "max": 255,
+        "min": 1,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 255
+    },
+    "virtual_retina/nCenter": {
+        "decimals": 6,
+        "doc": "order of the center temporal kernel",
+        "label": "n Center",
+        "max": 10,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "virtual_retina/pixels_per_degree": {
+        "decimals": 6,
+        "doc": "conversion factor to express all spatial scales in terms of visual degrees",
+        "label": "pixels per degree",
+        "max": 1000,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 5
+    },
+    "virtual_retina/relative_ampOPL": {
+        "decimals": 6,
+        "doc": "amplification parameter for the output of the OPL stage (Hz)",
+        "label": "relative ampOPL",
+        "max": 255,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "virtual_retina/sigmaCenter": {
+        "decimals": 6,
+        "doc": "standard deviation of center spatial kernel (deg)",
+        "label": "sigma Center",
+        "max": 10,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.3
+    },
+    "virtual_retina/sigmaSurround": {
+        "decimals": 6,
+        "doc": "standard deviation of surround spatial kernel  (deg)",
+        "label": "sigma Surround",
+        "max": 10,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.9
+    },
+    "virtual_retina/spontaneousActivity": {
+        "decimals": 6,
+        "doc": "luminance of the uniform screen that will be projected on the retina after stimulus stops",
+        "label": "Spontaneuous Activity",
+        "max": 255,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "virtual_retina/tauCenter": {
+        "decimals": 6,
+        "doc": "time constant of center temporal kernel (s)",
+        "label": "tau Center",
+        "max": 10,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.02
+    },
+    "virtual_retina/tauSurround": {
+        "decimals": 6,
+        "doc": "time constant of surround temporal kernel (s)",
+        "label": "tau Surround",
+        "max": 10,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.005
+    },
+    "virtual_retina/temporal_step": {
+        "decimals": 6,
+        "doc": "simulated time length of one discretization step in the retina (s)",
+        "label": "temporal step",
+        "max": 10,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.005
+    },
+    "virtual_retina/vrName": {
+        "doc": "ON/OFF polarity",
+        "index": 1,
+        "label": "VR name",
+        "type": "dtk::d_inliststring",
+        "unit": "",
+        "values": [
+            "vrOff",
+            "vrOn"
+        ]
+    },
+    "virtual_retina/wOPL": {
+        "decimals": 6,
+        "doc": "relative weight of center and surround signals",
+        "label": "w OPL",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "visual_flow/referenceCapacitance": {
+        "decimals": 5,
+        "doc": "Capacitance to rescale VR's output",
+        "label": "Capacitance of reference (nF)",
+        "max": 1000,
+        "min": 0.01,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.1
+    },
+    "visual_flow/restingPotential": {
+        "decimals": 5,
+        "doc": "Resting potential to rescale VR's output",
+        "label": "Resting potential (mV)",
+        "max": 100,
+        "min": -100,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "visual_flow/variationPotential": {
+        "decimals": 5,
+        "doc": "Range of variation for the neurons' potential to rescale VR's output",
+        "label": "Potential Variation (mV)",
+        "max": 100,
+        "min": -100,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 20
+    },
+    "worker": {
+        "doc": "worker that will run the simulation",
+        "index": 0,
+        "label": "Input",
+        "type": "dtk::d_inliststring",
+        "unit": "",
+        "values": [
+            "VisualFlow",
+            "Prosthesis",
+            "None"
+        ]
+    }
+}

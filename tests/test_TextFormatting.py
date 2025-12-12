@@ -9,7 +9,7 @@ def test_create_text_formatting():
                        "values_caract_sim": 1
                        }
 
-    path_macudata = "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/diSymGraph_pConnecParams/" \
+    path_macudata = "~/Documents/These/Data Macular/RefactoredMacular/diSymGraph_pConnecParams/" \
                     "41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/ampGang/RC_RM_dSGpCP{num_sim}_{name_caract_sim}" \
                     "{value_caract_sim}{unit_caract_sim}_0f.csv"
 
@@ -31,10 +31,10 @@ def test_modify_text_formatting_params():
                         "values_caract_sim": 6
                         }
 
-    path_macudata = "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/diSymGraph_pConnecParams/" \
+    path_macudata = "~/Documents/These/Data Macular/RefactoredMacular/diSymGraph_pConnecParams/" \
                     "41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/ampGang/RC_RM_dSGpCP{num_sim}_{name_caract_sim}" \
                     "{value_caract_sim}{unit_caract_sim}_0f.csv"
-    path_macudata2 = "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/diSymGraph_pConnecParams/" \
+    path_macudata2 = "~/Documents/These/Data Macular/RefactoredMacular/diSymGraph_pConnecParams/" \
                      "41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/ampGang/RC_RM_dSGpCP{num_sim}_{name_caract_sim}" \
                      "{value_caract_sim}{unit_caract_sim}_3f.csv"
 
@@ -53,11 +53,11 @@ def test_to_str():
                        "value_caract_sim": 1
                        }
 
-    path_macudata = "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/diSymGraph_pConnecParams/" \
+    path_macudata = "~/Documents/These/Data Macular/RefactoredMacular/diSymGraph_pConnecParams/" \
                     "41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/ampGang/RC_RM_dSGpCP{num_sim}_{name_caract_sim}" \
                     "{value_caract_sim}{unit_caract_sim}_0f.csv"
 
     text_formatting = tf.TextFormatting(path_macudata, dict_formatting)
-    assert text_formatting.to_str() == "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/" \
+    assert text_formatting.to_str() == "~/Documents/These/Data Macular/RefactoredMacular/" \
                                        "diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/" \
                                        "ampGang/RC_RM_dSGpCP0012_ampGang1Hz_0f.csv"

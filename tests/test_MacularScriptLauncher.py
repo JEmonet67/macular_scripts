@@ -6,18 +6,10 @@ def test_init_macular_script_launcher():
     path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
-    dict_config_test = {'n_sim': 10, 'path_macufile': '/user/jemonet/home/Documents/These/Macular files/Session '
-                                                      'retinocortical/RefactoredMacular/diSymGraph_pConnecParams/'
-                                                      '9x3,15°_N41x15_nue0_1,86_nui0_12,66_horizWhiteBarMotion0,67x0,9°'
-                                                      '_6dps_deltat0,0167_ampOPL0,025.json',
-                        'path_macudata': '/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/'
-                                         'diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/'
-                                         'ampGang/RC_RM_dSGpCP{id_sim}_'
+    dict_config_test = {'n_sim': 10, 'path_macufile': '../tests/data_tests/simple_simulation_macular.json',
+                        'path_macudata': '../tests/data_tests/ampGang/RC_RM_dSGpCP{id_sim}_'
                                          '{name_caract_sim}{value_caract_sim}{unit_caract_sim}_0f.csv',
-                        'path_macustim': '/user/jemonet/home/Documents/These/stimuli/stim_'
-                                         'database_newName/horizontal_motion/black_background_white_bar/'
-                                         'horizontalScreen/2700x945/bar201x270/'
-                                         'D187_motion30_trajX-191to2689_Y338to338_0f.mp4',
+                        'path_macustim': '../tests/data_tests/video_whitebar_D187_motion30.mp4',
                         'params_dict': {'virtual_retina/relative_ampOPL': [0.00083, 0.004, 0.0079, 0.0119, 0.0159,
                                                                            0.0198, 0.0292, 0.0333, 0.0375, 0.0417]},
                         'id_sim': ['0012'],
@@ -39,18 +31,10 @@ def test_check_params_dict():
     path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
-    dict_config_test = {'n_sim': 8, 'path_macufile': '/user/jemonet/home/Documents/These/Macular files/Session '
-                                                     'retinocortical/RefactoredMacular/diSymGraph_pConnecParams/'
-                                                     '9x3,15°_N41x15_nue0_1,86_nui0_12,66_horizWhiteBarMotion0,67x0,9°'
-                                                     '_6dps_deltat0,0167_ampOPL0,025.json',
-                        'path_macudata': '/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/'
-                                         'diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/'
-                                         'ampGang/RC_RM_dSGpCP{id_sim}_'
+    dict_config_test = {'n_sim': 8, 'path_macufile': '../tests/data_tests/simple_simulation_macular.json',
+                        'path_macudata': '../tests/data_tests/ampGang/RC_RM_dSGpCP{id_sim}_'
                                          '{name_caract_sim}{value_caract_sim}{unit_caract_sim}_0f.csv',
-                        'path_macustim': '/user/jemonet/home/Documents/These/stimuli/stim_'
-                                         'database_newName/horizontal_motion/black_background_white_bar/'
-                                         'horizontalScreen/2700x945/bar201x270/'
-                                         'D187_motion30_trajX-191to2689_Y338to338_0f.mp4',
+                        'path_macustim': '../tests/data_tests/video_whitebar_D187_motion30.mp4',
                         'params_dict': {'virtual_retina/relative_ampOPL': [0.00083, 0.004, 0.0079, 0.0119, 0.0159,
                                                                            0.0198, 0.0292, 0.0333],
                                         "BipolarGainControl/h_B": 6.11},
@@ -67,18 +51,10 @@ def test_change_dict_config():
     path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
-    dict_config_test = {'n_sim': 8, 'path_macufile': '/user/jemonet/home/Documents/These/Macular files/Session '
-                                                     'retinocortical/RefactoredMacular/diSymGraph_pConnecParams/'
-                                                     '9x3,15°_N41x15_nue0_1,86_nui0_12,66_horizWhiteBarMotion0,67x0,9°'
-                                                     '_6dps_deltat0,0167_ampOPL0,025.json',
-                        'path_macudata': '/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/'
-                                         'diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/'
-                                         'ampGang/RC_RM_dSGpCP{id_sim}_'
+    dict_config_test = {'n_sim': 8, 'path_macufile': '../tests/data_tests/simple_simulation_macular.json',
+                        'path_macudata': '../tests/data_tests/ampGang//RC_RM_dSGpCP{id_sim}_'
                                          '{name_caract_sim}{value_caract_sim}{unit_caract_sim}_0f.csv',
-                        'path_macustim': '/user/jemonet/home/Documents/These/stimuli/stim_'
-                                         'database_newName/horizontal_motion/black_background_white_bar/'
-                                         'horizontalScreen/2700x945/bar201x270/'
-                                         'D187_motion30_trajX-191to2689_Y338to338_0f.mp4',
+                        'path_macustim': '../tests/data_tests/video_whitebar_D187_motion30.mp4',
                         'params_dict': {'virtual_retina/relative_ampOPL': [0.00083, 0.004, 0.0079, 0.0119, 0.0159,
                                                                            0.0198, 0.0292, 0.0333]},
                         'id_sim': ['0012'],
@@ -138,31 +114,18 @@ def test_refresh_paths():
 
     macuscript_launcher.refresh_dict_formatting_alias(0)
     macuscript_launcher.refresh_paths(0)
-    assert macuscript_launcher.path_macufile == '/user/jemonet/home/Documents/These/Macular files/Session ' \
-                                                'retinocortical/RefactoredMacular/diSymGraph_pConnecParams/' \
-                                                '9x3,15°_N41x15_nue0_1,86_nui0_12,66_horizWhiteBarMotion0,67x0,9°' \
-                                                '_6dps_deltat0,0167_ampOPL0,025.json'
-    assert macuscript_launcher.path_macudata == '/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/' \
-                                                'diSymGraph_pConnecParams/41x15c/' \
-                                                'horizontal_white_bar/bar0,67x0,9°_6dps/' \
-                                                'ampGang/RC_RM_dSGpCP0012_ampGang1Hz_0f.csv'
-    assert macuscript_launcher.path_macustim == '/user/jemonet/home/Documents/These/stimuli/stim_' \
-                                                'database_newName/horizontal_motion/black_background_white_bar/' \
-                                                'horizontalScreen/2700x945/bar201x270/' \
-                                                'D187_motion30_trajX-191to2689_Y338to338_0f.mp4'
+    assert macuscript_launcher.path_macufile == '../tests/data_tests/simple_simulation_macular.json'
+    assert macuscript_launcher.path_macudata == '../tests/data_tests/ampGang/RC_RM_dSGpCP0012_ampGang1Hz_0f.csv'
+    assert macuscript_launcher.path_macustim == '../tests/data_tests/video_whitebar_D187_motion30.mp4'
     assert macuscript_launcher.path_macugraph == ""
 
 
 def test_create_non_existing_path():
     path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
-    path_macudata_file = "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/" \
-                         "diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/" \
-                         "ampGang/test/oui/test.py"
+    path_macudata_file = "../tests/data_tests/ampGang/test/oui/test.py"
 
-    path_macudata_dir = "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/" \
-                        "diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/" \
-                        "ampGang/test/oui"
+    path_macudata_dir = "../tests/data_tests/ampGang/test/oui"
 
     macuscript_launcher.create_non_existing_path(path_macudata_file)
     assert os.path.isdir(path_macudata_dir)
@@ -171,13 +134,9 @@ def test_create_non_existing_path():
 def test_path_file_to_path_dir():
     path_init_file = "../resources/config_macuscript_default.json"
     macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
-    path_macudata_file = "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/" \
-                         "diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/" \
-                         "ampGang/test/test.py"
+    path_macudata_file = "../tests/data_tests/ampGang/test/test.py"
 
-    path_macudata_dir = "/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/" \
-                        "diSymGraph_pConnecParams/41x15c/horizontal_white_bar/bar0,67x0,9°_6dps/" \
-                        "ampGang/test/"
+    path_macudata_dir = "../tests/data_tests/ampGang/test/"
 
     assert macuscript_launcher.path_file_to_path_dir(path_macudata_file) == path_macudata_dir
 
@@ -211,18 +170,9 @@ def test_load_next_sim():
 
     assert macuscript_launcher.dict_formatting_alias == dict_formatting_alias0
 
-    assert macuscript_launcher.path_macufile == '/user/jemonet/home/Documents/These/Macular files/Session ' \
-                                                'retinocortical/RefactoredMacular/diSymGraph_pConnecParams/' \
-                                                '9x3,15°_N41x15_nue0_1,86_nui0_12,66_horizWhiteBarMotion0,67x0,9°' \
-                                                '_6dps_deltat0,0167_ampOPL0,025.json'
-    assert macuscript_launcher.path_macudata == '/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/' \
-                                                'diSymGraph_pConnecParams/41x15c/' \
-                                                'horizontal_white_bar/bar0,67x0,9°_6dps/' \
-                                                'ampGang/RC_RM_dSGpCP0012_ampGang1Hz_0f.csv'
-    assert macuscript_launcher.path_macustim == '/user/jemonet/home/Documents/These/stimuli/stim_' \
-                                                'database_newName/horizontal_motion/black_background_white_bar/' \
-                                                'horizontalScreen/2700x945/bar201x270/' \
-                                                'D187_motion30_trajX-191to2689_Y338to338_0f.mp4'
+    assert macuscript_launcher.path_macufile == '../tests/data_tests/simple_simulation_macular.json'
+    assert macuscript_launcher.path_macudata == '../tests/data_tests/ampGang/RC_RM_dSGpCP0012_ampGang1Hz_0f.csv'
+    assert macuscript_launcher.path_macustim == '../tests/data_tests/video_whitebar_D187_motion30.mp4'
     assert macuscript_launcher.path_macugraph == ""
 
 
@@ -232,18 +182,9 @@ def test_make_subprocess():
 
     macuscript_launcher.load_next_sim(0)
     list_subprocess_test = ["macular-batch", "-r",
-                            "-f", '/user/jemonet/home/Documents/These/Macular files/Session '
-                                  'retinocortical/RefactoredMacular/diSymGraph_pConnecParams/'
-                                  '9x3,15°_N41x15_nue0_1,86_nui0_12,66_horizWhiteBarMotion0,67x0,9°'
-                                  '_6dps_deltat0,0167_ampOPL0,025.json',
-                            "-o", '/user/jemonet/home/Documents/These/Data Macular/RefactoredMacular/'
-                                  'diSymGraph_pConnecParams/41x15c/'
-                                  'horizontal_white_bar/bar0,67x0,9°_6dps/'
-                                  'ampGang/RC_RM_dSGpCP0012_ampGang1Hz_0f.csv',
-                            "-s", '/user/jemonet/home/Documents/These/stimuli/stim_'
-                                  'database_newName/horizontal_motion/black_background_white_bar/'
-                                  'horizontalScreen/2700x945/bar201x270/'
-                                  'D187_motion30_trajX-191to2689_Y338to338_0f.mp4',
+                            "-f", '../tests/data_tests/simple_simulation_macular.json',
+                            "-o", '../tests/data_tests/ampGang/RC_RM_dSGpCP0012_ampGang1Hz_0f.csv',
+                            "-s", '../tests/data_tests/video_whitebar_D187_motion30.mp4',
                             "-p", "virtual_retina/relative_ampOPL=0.00083"]
 
     assert macuscript_launcher.make_subprocess() == list_subprocess_test

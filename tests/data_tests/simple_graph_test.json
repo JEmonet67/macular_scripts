@@ -1,0 +1,596 @@
+{
+    "A_b_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Bipolar cell activity for gain control",
+        "label": "A_b_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "A_b_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Bipolar cell activity for gain control",
+        "label": "A_b_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "A_g_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Ganglion Cell activity for gain control",
+        "label": "A_g_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "A_g_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Ganglion Cell activity for gain control",
+        "label": "A_g_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "A_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Acetylcholine concentration",
+        "label": "A_max",
+        "max": 1000,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1000
+    },
+    "A_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Acetylcholine concentration",
+        "label": "A_min",
+        "max": 1000,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "C_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Calcium concentration",
+        "label": "C_max",
+        "max": 3000,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 3000
+    },
+    "C_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Calcium concentration",
+        "label": "C_min",
+        "max": 3000,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "R_max": {
+        "decimals": 9,
+        "doc": "Maximum value of sAHP activition variable",
+        "label": "R_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "R_min": {
+        "decimals": 9,
+        "doc": "Minimum value of sAHP activition variable",
+        "label": "R_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "TA_max": {
+        "decimals": 9,
+        "doc": "Maximum value of GABA released by an amacrine cell",
+        "label": "TA_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "TA_min": {
+        "decimals": 9,
+        "doc": "Minimum value of GABA released by an amacrine cell",
+        "label": "TA_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "TB_max": {
+        "decimals": 9,
+        "doc": "Maximum value of GABA released by a bipolar cell",
+        "label": "TB_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "TB_min": {
+        "decimals": 9,
+        "doc": "Minimum value of GABA released by a bipolar cell",
+        "label": "TB_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "V_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Membrane potential",
+        "label": "V_max",
+        "max": 100,
+        "min": -100,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "V_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Membrane potential",
+        "label": "V_min",
+        "max": 100,
+        "min": -100,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "h_max": {
+        "decimals": 9,
+        "doc": "Maximum value of inactivation variable for sodium in Hodgkin-Huxley model",
+        "label": "h_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "h_min": {
+        "decimals": 9,
+        "doc": "Minimum value of inactivation variable for sodium in Hodgkin-Huxley model",
+        "label": "h_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "layer_0/angle": {
+        "decimals": 2,
+        "doc": "The angle rotation of the grid graph.",
+        "label": "angle",
+        "max": 180,
+        "min": -180,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "layer_0/cell_type": {
+        "doc": "Select the cell type",
+        "index": 5,
+        "label": "cell type",
+        "type": "dtk::d_inliststring",
+        "unit": "",
+        "values": [
+            "Amacrine",
+            "AmacrineGABA",
+            "AmacrineLinearPharma",
+            "Bipolar",
+            "BipolarAMPA",
+            "BipolarGainControl",
+            "BipolarLinearPharma",
+            "CorticalExcitatory",
+            "CorticalInhibitory",
+            "Electrode",
+            "GanglionGainControl",
+            "GanglionPharma",
+            "HodgkinHuxleyCurrent",
+            "HodgkinHuxleyVoltage",
+            "MorrisLecar",
+            "MorrisLecarAch",
+            "SAC"
+        ]
+    },
+    "layer_0/columns": {
+        "decimals": 0,
+        "doc": "The number of columns of the grid graph.",
+        "label": "columns",
+        "max": 1000,
+        "min": 1,
+        "type": "dtk::d_int",
+        "unit": "",
+        "value": 15
+    },
+    "layer_0/length": {
+        "decimals": 6,
+        "doc": "The length of the grid graph. Expressed in millimeters.",
+        "label": "length",
+        "max": 1000000,
+        "min": 1e-06,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.945
+    },
+    "layer_0/origin": {
+        "doc": "The coordinates origin for the translation and the rotation.",
+        "index": 0,
+        "label": "listofstrings",
+        "type": "dtk::d_inliststring",
+        "unit": "",
+        "values": [
+            "Macular frame",
+            "Optic disc"
+        ]
+    },
+    "layer_0/rows": {
+        "decimals": 0,
+        "doc": "The number of rows of the grid graph.",
+        "label": "rows",
+        "max": 1000,
+        "min": 1,
+        "type": "dtk::d_int",
+        "unit": "",
+        "value": 41
+    },
+    "layer_0/width": {
+        "decimals": 6,
+        "doc": "The width of the grid graph. Expressed in millimeters.",
+        "label": "width",
+        "max": 1000000,
+        "min": 1e-06,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 2.7
+    },
+    "layer_0/x": {
+        "decimals": 2,
+        "doc": "The X translation of the grid graph.",
+        "label": "x",
+        "max": 1000000,
+        "min": -1000000,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "layer_0/y": {
+        "decimals": 2,
+        "doc": "The Y translation of the grid graph.",
+        "label": "y",
+        "max": 1000000,
+        "min": -1000000,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "layer_2/angle": {
+        "decimals": 2,
+        "doc": "The angle rotation of the grid graph.",
+        "label": "angle",
+        "max": 180,
+        "min": -180,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "layer_2/cell_type": {
+        "doc": "Select the cell type",
+        "index": 10,
+        "label": "cell type",
+        "type": "dtk::d_inliststring",
+        "unit": "",
+        "values": [
+            "Amacrine",
+            "AmacrineGABA",
+            "AmacrineLinearPharma",
+            "Bipolar",
+            "BipolarAMPA",
+            "BipolarGainControl",
+            "BipolarLinearPharma",
+            "CorticalExcitatory",
+            "CorticalInhibitory",
+            "Electrode",
+            "GanglionGainControl",
+            "GanglionPharma",
+            "HodgkinHuxleyCurrent",
+            "HodgkinHuxleyVoltage",
+            "MorrisLecar",
+            "MorrisLecarAch",
+            "SAC"
+        ]
+    },
+    "layer_2/columns": {
+        "decimals": 0,
+        "doc": "The number of columns of the grid graph.",
+        "label": "columns",
+        "max": 1000,
+        "min": 1,
+        "type": "dtk::d_int",
+        "unit": "",
+        "value": 15
+    },
+    "layer_2/length": {
+        "decimals": 6,
+        "doc": "The length of the grid graph. Expressed in millimeters.",
+        "label": "length",
+        "max": 1000000,
+        "min": 1e-06,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.945
+    },
+    "layer_2/origin": {
+        "doc": "The coordinates origin for the translation and the rotation.",
+        "index": 0,
+        "label": "listofstrings",
+        "type": "dtk::d_inliststring",
+        "unit": "",
+        "values": [
+            "Macular frame",
+            "Optic disc"
+        ]
+    },
+    "layer_2/rows": {
+        "decimals": 0,
+        "doc": "The number of rows of the grid graph.",
+        "label": "rows",
+        "max": 1000,
+        "min": 1,
+        "type": "dtk::d_int",
+        "unit": "",
+        "value": 41
+    },
+    "layer_2/width": {
+        "decimals": 6,
+        "doc": "The width of the grid graph. Expressed in millimeters.",
+        "label": "width",
+        "max": 1000000,
+        "min": 1e-06,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 2.7
+    },
+    "layer_2/x": {
+        "decimals": 2,
+        "doc": "The X translation of the grid graph.",
+        "label": "x",
+        "max": 1000000,
+        "min": -1000000,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "layer_2/y": {
+        "decimals": 2,
+        "doc": "The Y translation of the grid graph.",
+        "label": "y",
+        "max": 1000000,
+        "min": -1000000,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "layer_nb": 2,
+    "m_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Activation variable for sodium in Hodgkin-Huxley model",
+        "label": "m_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "m_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Activation variable for sodium in Hodgkin-Huxley model",
+        "label": "m_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "mac_path": "/user/jemonet/home/Documents/Hachkaton SOLID/macular/tst/resources/simple_graph_test.mac",
+    "nA_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Activation variable for GABA in AmacrineGABA model",
+        "label": "nA_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "nA_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Activation variable for GABA in AmacrineGABA model",
+        "label": "nA_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "nB_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Activation variable for GABA in BipolarGABA model",
+        "label": "nB_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "nB_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Activation variable for GABA in BipolarGABA model",
+        "label": "nB_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "n_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Activation variable for potassium in Hodgkin-Huxley model",
+        "label": "n_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "n_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Activation variable for potassium in Hodgkin-Huxley model",
+        "label": "n_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "optic_disc_x": 0,
+    "optic_disc_y": 0,
+    "s_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Saturated Calmodulin fraction",
+        "label": "s_max",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 1
+    },
+    "s_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Saturated Calmodulin fraction",
+        "label": "s_min",
+        "max": 1,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "seed": {
+        "decimals": 0,
+        "doc": "Seed for random generator",
+        "label": "seed",
+        "max": 2147483647,
+        "min": 0,
+        "type": "dtk::d_int",
+        "unit": "",
+        "value": 0
+    },
+    "synaps_layer_src_dst": {
+        "synapses_0-2_1/": "Layer 0,Layer 2"
+    },
+    "synapses_0-2_1/conn_type": {
+        "doc": "Select the synapses connection type",
+        "index": 1,
+        "label": "synapses conn_type",
+        "type": "dtk::d_inliststring",
+        "unit": "",
+        "values": [
+            "Nearest Neighbor",
+            "Gaussian",
+            "OneToOne",
+            "Neighbor-4+1",
+            "Fully Connected",
+            "Radius Neighbor"
+        ]
+    },
+    "synapses_0-2_1/radius": {
+        "decimals": 2,
+        "doc": "The radius to select the neighbors. (in case of gaussians, equals to 3 times sigma)",
+        "label": "radius",
+        "max": 1000000,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0.09
+    },
+    "synapses_0-2_1/synapses_type": {
+        "doc": "Select the synapses type",
+        "index": 3,
+        "label": "synapses type",
+        "type": "dtk::d_inliststring",
+        "unit": "",
+        "values": [
+            "AmacrineToBipolar",
+            "AmacrineToGanglion",
+            "BipolarGainControlToAmacrine",
+            "BipolarGainControlToGanglion",
+            "BipolarToAmacrine",
+            "BipolarToGanglion",
+            "GapJunctionVoltage",
+            "LinearRectified"
+        ]
+    },
+    "v_e_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Initials firing rate for cortical excitatory cells",
+        "label": "v_e_max",
+        "max": 100,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 100
+    },
+    "v_e_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Initials firing rate for cortical excitatory cells",
+        "label": "v_e_min",
+        "max": 100,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "v_i_max": {
+        "decimals": 9,
+        "doc": "Maximum value of Initials firing rate for cortical inhibitory cells",
+        "label": "v_i_max",
+        "max": 100,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 100
+    },
+    "v_i_min": {
+        "decimals": 9,
+        "doc": "Minimum value of Initials firing rate for cortical inhibitory cells",
+        "label": "v_i_min",
+        "max": 100,
+        "min": 0,
+        "type": "dtk::d_real",
+        "unit": "",
+        "value": 0
+    },
+    "version": "1.5.5"
+}
