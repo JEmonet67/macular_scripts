@@ -1,3 +1,7 @@
+import multiprocessing
+import subprocess
+import traceback
+
 import src.MacularScriptLauncher as msl
 import os
 
@@ -189,7 +193,62 @@ def test_make_subprocess():
 
     assert macuscript_launcher.make_subprocess() == list_subprocess_test
 
-# def test_run():
+def run_launcher(result_queue):
+    path_init_file = "../resources/config_macuscript_default.json"
+    macuscript_launcher = msl.MacularScriptLauncher(path_init_file)
 
+    macuscript_launcher.load_next_sim(0)
+    try:
+        macuscript_launcher.run()
+        result_queue.put(("success", None))
+    except Exception as e:
+        result_queue.put(("error", traceback.format_exc()))
 
-# def test_multiple_run():
+def test_run():
+    result_queue = multiprocessing.Queue()
+    process = multiprocessing.Process(target=run_launcher,
+                                      args=(result_queue,))
+    process.start()
+
+    process.join(timeout=10)
+
+    if process.is_alive():
+        process.terminate()
+        process.join()
+
+    if not result_queue.empty():
+        status, payload = result_queue.get()
+
+        if status == "error":
+            raise RuntimeError(
+                f"Error in run():\n{payload}"
+            )
+
+def macuscript_launcher(result_queue):
+    path_init_file = "../resources/config_macuscript_default.json"
+    list_subprocess = ["macuscript", f"{path_init_file}"]
+    try:
+        subprocess.run(list_subprocess)
+        result_queue.put(("success", None))
+    except Exception as e:
+        result_queue.put(("error", traceback.format_exc()))
+
+def test_macuscript():
+    result_queue = multiprocessing.Queue()
+    process = multiprocessing.Process(target=macuscript_launcher,
+        args=(result_queue,))
+    process.start()
+
+    process.join(timeout=10)
+
+    if process.is_alive():
+        process.terminate()
+        process.join()
+
+    if not result_queue.empty():
+        status, payload = result_queue.get()
+
+        if status == "error":
+            raise RuntimeError(
+                f"Error in Macuscript :\n{payload}"
+            )
