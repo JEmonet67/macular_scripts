@@ -4,21 +4,69 @@ This tool allows you to run Macular simulations in batch mode sequentially. It i
 
 ## Prerequisites
 
-None.
+Linux.
 
 ## Installation
 
 Clone the macular_scripts directory from the GitHub repository (using SSH or HTML).
 
-`git clone git@github.com:JEmonet67/macular_scripts.git `(ssh)
+```bash
+git clone git@github.com:JEmonet67/macular_scripts.git (ssh)
+```
 
-`git clone https://github.com/JEmonet67/macular_scripts.git `(html)
+```bash
+git clone https://github.com/JEmonet67/macular_scripts.git (html)
+```
+
+Then make the macular-batch and macularscript executable accessible everywhere.
+
+
+
+**Case 1 :** 
+ 
+From the root repository of the Macular folder.
+```bash
+sudo ln -s "$(pwd)/build/bin/macular-batch" /usr/local/bin/nom_utilisateur/macular-batch
+```
+
+From the root repository of the Macular Scripts.
+```bash
+sudo chmod +x "$(pwd)/macuscript.sh"
+sudo ln -s "$(pwd)/macuscript.sh" /usr/local/bin/nom_utilisateur/macuscript
+```
+
+
+**Case 2 :** 
+
+If you do not have root access, you will need to use a .local folder in your home directory.
+
+```bash
+cd ~
+mkdir -p .local/bin
+```
+
+Then, from your root repository of Macular.
+```
+ln -s "$(pwd)/build/bin/macular-batch" ~/.local/bin/macular-batch
+```
+
+And, from your root repository of Macular Scripts.
+```
+ln -s "$(pwd)/macuscript.sh" ~/.local/bin/macuscript
+```
+
+Once done, you must open your bashrc (nano ~/.bashrc) to add the new path to your PATH variable: 
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
 
 ## Usage
 
 ### Bash command
 
-`./macuscript.sh ~/Documents/These/MacularFiles/config_file.json `
+```bash
+./macuscript.sh ~/Documents/These/MacularFiles/config_file.json
+```
 
 Bash command used to launch a batch of simulations from macular_scripts, with all parameters defined in the batch configuration file. The bash script launches the Python script of the same name using the path_config_file provided as input. Macuscript.py creates a MacularScriptLauncher based on the path_config_file and then launches all simulations sequentially. 
 
@@ -54,7 +102,7 @@ The batch configuration file “config_macuscript_default_test_barSpeed.json” 
 
 ## Modules
 
-### MacularScriptLauncher Module
+### MacularScriptLauncher Module
 
 Module implementing the MacularScriptLauncher class, whose objects are constructed using the MacularScriptLauncher(path_config_file) constructor, which takes as input the path to the batch configuration file in JSON format. The constructor initializes the dict_config, reg_ext_file, and n_sim attributes with the values found in the file. The other attributes are initialized but empty.
 
@@ -136,7 +184,7 @@ MIT License
 
 Python.
 
-## Contribution
+## Contribution
 
 This MacularScript script was created entirely by Jérôme EMONET as part of his thesis to facilitate successive simulations with the Macular software, to which he also contributed. Macular has also been the subject of a publication.
 
