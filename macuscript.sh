@@ -1,3 +1,4 @@
 #!/bin/bash
 
-python ~/Documents/These/Code/macular_scripts/macuscript.py "$1"
+SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+python "$SCRIPT_DIR/macuscript.py" "$1"
