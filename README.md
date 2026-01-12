@@ -118,6 +118,8 @@ Each MacularScriptLauncher consists of several attributes:
 - **params_dict** corresponds to the set of Macular parameters that we want to vary between batch simulations. This attribute comes from the key of the same name defined in the batch configuration file. It contains a set of keys corresponding to the names of the parameters to be changed. The keys are associated either with a value to be applied to the entire batch or with a list of values to vary the parameter between each simulation in the batch.
 - **reg_ext_file** corresponds to the regular expression used to identify the name of a file within a path to the file. 
 
+The MacularScriptLauncher module consists of the functions detailed below.
+
 **dict_config(dict_config):** Setter for the dict_config attribute that checks for the presence of mandatory parameters, initializes n_sim, and resets all other attributes of MacularScriptLauncher.  It also checks and adds dict_config.
 
 **read_config_file(path_config_file):** Method for reading the contents of a batch configuration file.
@@ -168,6 +170,8 @@ Each TextFormatting consists of three attributes:
 - **formatting_dict** contains the dictionary associating each alias with the character string with which it should be substituted.
 - **formatting_reg** contains a compiled regular expression pattern used to extract all sub-strings corresponding to the aliases in braces.
 
+The TextFormatting module consists of the functions detailed below.
+
 **str_to_form(text):** Setter for the str_to_form attribute, which checks that the text to be formatted is indeed a character string; otherwise, an error is returned.
 
 **formatting_dict(dictionary):** Setter for the formatting_dict attribute, which checks that the value applied to it is indeed a dictionary; otherwise, an error is returned.
@@ -187,6 +191,8 @@ Python.
 ## Contribution
 
 This MacularScript script was created entirely by Jérôme EMONET as part of his thesis to facilitate successive simulations with the Macular software, to which he also contributed. Macular has also been the subject of a publication.
+
+Macular gitlab : https://gitlab.inria.fr/macular/macular
 
 Thesis reference : A retino-cortical model to study movement-generated waves in the visual system (https://hal.science/tel-04827484v2)
 
